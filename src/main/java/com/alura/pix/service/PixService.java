@@ -16,21 +16,21 @@ public class PixService {
     @Autowired
     private final PixRepository pixRepository;
 
-    @Autowired
-    private final KafkaTemplate<String, PixRecord> kafkaTemplate;
+//    @Autowired
+//    private final KafkaTemplate<String, PixRecord> kafkaTemplate;
 
+    //Como vou usar o kafka connect nao preciso mais fazer o produtor mandar para o topico do kafka
     public PixDTO salvarPix(PixDTO pixDTO) {
         pixRepository.save(Pix.toEntity(pixDTO));
-
-        PixRecord pixRecord = PixRecord.newBuilder()
-                .setIdentificador(pixDTO.getIdentifier())
-                .setChaveOrigem(pixDTO.getChaveOrigem())
-                .setChaveDestino(pixDTO.getChaveDestino())
-                .setStatus(pixDTO.getStatus().toString())
-                .setDataTransferencia(pixDTO.getDataTransferencia().toString())
-                .build();
-
-        kafkaTemplate.send("pix-topic", pixDTO.getIdentifier(), pixRecord);
+//        PixRecord pixRecord = PixRecord.newBuilder()
+//                .setIdentificador(pixDTO.getIdentifier())
+//                .setChaveOrigem(pixDTO.getChaveOrigem())
+//                .setChaveDestino(pixDTO.getChaveDestino())
+//                .setStatus(pixDTO.getStatus().toString())
+//                .setDataTransferencia(pixDTO.getDataTransferencia().toString())
+//                .build();
+//
+//        kafkaTemplate.send("pix-topic", pixDTO.getIdentifier(), pixRecord);
         return pixDTO;
     }
 

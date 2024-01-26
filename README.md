@@ -10,6 +10,8 @@ pix-produtor é um projeto para fins de aprendizado relacionado ao apache kafka.
 - [x] Validar Pix;
 - [x] Cadastrar chaves Pix;
 - [x] Validar chaves Pix;
+- [x] Agora a aplicacao nao manda mais para o kafka e sim para o banco, utilizando o kafka connect
+- [x] Url e porta para o confluent local http://localhost:9021/clusters
 
 
 ---
@@ -27,6 +29,8 @@ As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 - **[Java 17](https://www.oracle.com/java)**
 - **[Spring Kafka 3](https://spring.io/projects/spring-boot)**
 - **[Maven](https://maven.apache.org)**
+- **[Confluent](https://www.confluent.io/what-is-apache-kafka/)**
+- **[Apache Avro](https://avro.apache.org/)**
 
 
 
